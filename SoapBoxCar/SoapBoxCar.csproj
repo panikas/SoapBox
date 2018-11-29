@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Balloon.cs" />
+    <Compile Include="Assets\Cannon.cs" />
     <Compile Include="Assets\CarController.cs" />
     <Compile Include="Assets\CurveTest.cs" />
     <Compile Include="Assets\CustomTransformAnimation.cs" />
