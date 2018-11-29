@@ -45,10 +45,10 @@ public class Balloon : MonoBehaviour {
         if (Input.GetKey(KeyCode.Alpha1)) { 
             balloon.AddForce(Vector3.up * floatStrength);
         }
-        if(balloon.transform.localPosition != startPos)
+        else
         {
-            float step = speed * Time.deltaTime;
-            balloon.transform.localPosition = Vector3.MoveTowards(balloon.transform.localPosition, startPos, step);
+            balloon.AddForce(Vector3.up * floatStrength/24);
         }
+        
     }
 }
