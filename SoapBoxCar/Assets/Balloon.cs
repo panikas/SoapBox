@@ -15,15 +15,18 @@ public class Balloon : MonoBehaviour {
     [SerializeField]
     private float animationDuration;
     private IEnumerator co;
+    [SerializeField]
+    private float speed = 1f;
+
+    private Vector3 startPos;
     // Use this for initialization
     void Start () {
         restScale = balloonGraphic.transform.localScale;
-        
+        startPos = balloon.transform.localPosition;
         co = GetComponent<CustomTransformAnimation>().AnimateLocalScale(balloonGraphic.transform.localScale, restScale * 2, animationDuration, balloonGraphic, scaleCurve);
     }
     void Update()
-    {
-        
+    {  
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             StopCoroutine(co);
@@ -41,6 +44,11 @@ public class Balloon : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKey(KeyCode.Alpha1)) { 
             balloon.AddForce(Vector3.up * floatStrength);
+        }
+        if(balloon.transform.localPosition != startPos)
+        {
+            float step = speed * Time.deltaTime;
+            balloon.transform.localPosition = Vector3.MoveTowards(balloon.transform.localPosition, startPos, step);
         }
     }
 }
