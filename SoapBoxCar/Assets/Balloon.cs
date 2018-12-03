@@ -47,7 +47,7 @@ public class Balloon : MonoBehaviour {
         }
         else
         {
-            balloon.AddForce(Vector3.up * floatStrength/24);
+            balloon.AddForce(Vector3.up * floatStrength/12);
         }
         
     }

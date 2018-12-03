@@ -8,6 +8,8 @@ public class RocketForce : MonoBehaviour {
     public Rigidbody rb;
     public ParticleSystem ps;
     public KeyCode key;
+    public ForceMode forceMode;
+    public bool forceAtPosition = true;
 
     void Start()
     {
@@ -17,7 +19,13 @@ public class RocketForce : MonoBehaviour {
     {
         
         if (Input.GetKey(key)) {
-            rb.AddForceAtPosition(transform.forward * thrust, transform.position, ForceMode.Force);
+            if (forceAtPosition) { 
+            rb.AddForceAtPosition(transform.forward * thrust, transform.position, forceMode);
+            }
+            else
+            {
+                rb.AddForce(transform.forward * thrust, forceMode);
+            }
         }
         
     }
