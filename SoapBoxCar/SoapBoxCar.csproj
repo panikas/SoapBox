@@ -313,6 +313,7 @@
     <Compile Include="Assets\CustomTransformAnimation.cs" />
     <Compile Include="Assets\PistonThing.cs" />
     <Compile Include="Assets\RocketForce.cs" />
+    <Compile Include="Assets\rotationsScript.cs" />
     <Compile Include="Assets\SimpleCarController.cs" />
   </ItemGroup>
   <ItemGroup>
